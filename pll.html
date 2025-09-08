@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caractérisation d'une PLL pour la démodulation de signaux - BAMBA AHMED</title>
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-detail">
+    <a href="/portfolio/index.html#projets" class="back-button">
+      <i class="fas fa-arrow-left"></i> Retour aux projets
+    </a>
+
+    <div class="project-header">
+      <h1>Caractérisation d'une PLL pour la démodulation de signaux</h1>
+    </div>
+
+    <div class="project-content">
+      <div class="project-description">
+        <h3>1. Introduction</h3>
+        <p>Ce projet visait à concevoir, réaliser et analyser une <strong>boucle à phase asservie (PLL)</strong> permettant de démoduler des signaux <strong>modulés en fréquence (FM)</strong> et d'expérimenter ses différentes fonctions (<strong>récupération de porteuse</strong>, <strong>démodulation de phase</strong>, etc.).</p>
+        <br>
+        
+        <h3>2. Théorie et définition de la PLL</h3>
+        <p>Principe : <strong>asservissement de la phase/fréquence</strong> de sortie d'un <strong>VCO (Voltage Controlled Oscillator)</strong> sur un signal d'entrée via un <strong>comparateur de phase</strong> et un <strong>filtre de boucle (RC)</strong>.<br>
+        Blocs constitutifs :<br>
+        - <strong>Comparateur de phase</strong> (ou mélangeur RF pour le détecteur de fréquence)<br>
+        - <strong>Filtre de boucle</strong> (RC passe-bas)<br>
+        - <strong>VCO réglable en tension</strong><br>
+        Applications :<br>
+        - <strong>Récupération de porteuse</strong> : verrouillage sans transmettre la modulation (bande passante du filtre < fm)<br>
+        - <strong>Démodulateur FM</strong> : sortie du filtre suit la modulation (bande passante > fm)</p>
+        <br>
+        
+        <h3>3. Matériel et prérequis</h3>
+        <p><strong>Instrumentation HF</strong> : générateur <strong>BF et HF</strong> (Rigol DG1032, DS830), <strong>oscilloscope</strong> Keysight DSO‑X3012T (FFT), <strong>analyseur de spectre</strong> DSA832E.<br>
+        <strong>Composants</strong> : <strong>mélangeur</strong> Mini-Circuits ZP‑3, <strong>VCO</strong> ZOS‑535+, splitter, câbles BNC, carte sommateur/amplificateur/filtre.<br>
+        <strong>Pré-requis</strong> : <strong>spectre sinusoïdal</strong>, <strong>modulation AM/FM</strong> de base, théorie de la <strong>bande de Carson</strong>, <strong>fonctions de Bessel</strong>.</p>
+        <br>
+        
+        <h3>4. Exercices préparatoires en basse fréquence</h3>
+        <p><strong>Spectre sinusoïdal</strong> : mesure de la <strong>période</strong> (10 μs pour 100 kHz), <strong>tension efficace</strong> et conversion en <strong>dBm</strong>.<br>
+        <strong>Modulation AM</strong> : études pour depth = 50 % et 100 % – observation des deux <strong>bandes latérales</strong> à ±10 kHz de la porteuse, calcul de l'<strong>indice M</strong>.<br>
+        <strong>Modulation FM</strong> : variations de <strong>Δf</strong> (10, 20, 30, 40 kHz) – comptage des raies > –70 dBm, comparaison aux <strong>coefficients de Bessel</strong>, estimation de la <strong>bande de Carson</strong>.<br>
+        <strong>Repliement de spectre</strong> : examen des phénomènes de <strong>surmodulation</strong> lorsque fm > fp.</p>
+        <br>
+        
+        <h3>5. Caractérisation des composants HF</h3>
+        <p><strong>Mélangeur (Freq. Mixer)</strong><br>
+        - Génération de la <strong>composante basse fréquence</strong> en sortie IF et tracé de VIF = f(Δφ) pour extraire la <strong>sensibilité Kφ</strong>.<br>
+        <strong>VCO</strong><br>
+        - Mesure de la <strong>fréquence de sortie</strong> en fonction de la <strong>tension de commande</strong> (1–16 V → 300–525 MHz) pour déterminer <strong>K_VCO</strong>.<br>
+        <strong>Sommateur, amplificateur, filtre</strong><br>
+        - Vérification de la somme d'un <strong>offset</strong> et d'une <strong>porteuse</strong>, <strong>gain en bande passante</strong>, <strong>atténuation aux hautes fréquences</strong>.</p>
+        <br>
+        
+        <h3>6. Réalisation des montages pratiques</h3>
+        <p><strong>Montage #1 : Modulation</strong><br>
+        - Génération d'une <strong>porteuse à 300 MHz</strong> (ou 10 MHz), <strong>modulation FM</strong> (β=3), mesure du <strong>spectre</strong>, comparaison avec la théorie (<strong>bande de Carson</strong>, raies d'ordre jusqu'à <strong>J₆</strong>).<br>
+        <strong>Montage #2 : Démodulation</strong><br>
+        - Passage dans la <strong>PLL</strong>, conception d'un <strong>filtre RC</strong> (fc = 10 × fm = 100 kHz), observation de la <strong>récupération de la modulation</strong> en sortie du filtre de boucle.<br>
+        <strong>Montage #3 : Transmission en boucle ouverte</strong><br>
+        - Analyse des exigences de <strong>bande passante</strong> et de <strong>gain de la chaîne d'amplification</strong> pour maintenir le <strong>gain de boucle constant</strong> dans la PLL.</p>
+        <br>
+        
+        <h3>7. Conclusion</h3>
+        <p>Ce projet a permis de mettre en pratique la <strong>théorie des PLL</strong>, d'expérimenter la <strong>modulation et la démodulation de signaux HF/BF</strong>, et de mesurer les <strong>performances des blocs</strong> (mélangeur, VCO, filtre). Il a renforcé les compétences en <strong>électronique hyperfréquence</strong>, <strong>traitement du signal</strong> et <strong>instrumentation</strong>.</p>
+      </div>
+
+      <div class="project-meta">
+        <h3>Informations</h3>
+        <div class="meta-item">
+          <div class="info-line"><strong>Date :</strong> <span>2025</span></div>
+          <div class="info-line"><strong>Nombre de participants :</strong> 3</div>
+          <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+        </div>
+        <div class="meta-item">
+          <strong>Acquis et outils/technologies :</strong>
+          <p><span style="font-weight: bold; color: black;">Équipements :</span> GBF RIGOL DG1032, GHF RIGOL DS830, Analyseur de spectre DSA832E, Oscilloscope Keysight DSO-X3012T (mode FFT), Composants Hyperfréquence connectorisés (Mini-circuits) : ZP-3 (mélangeur), ZOS-535+ (VCO), Splitter, Câbles BNC de longueur 25 cm et 1 m , Carte électronique intégrant les fonctions sommateur, amplification et filtrage.</p>
+          <p><span style="font-weight: bold; color: black;">Compétences :</span> caractérisation de composants HF, conception de filtres RC, acquisition et analyse de données spectrales, théorie des boucles à phase asservie, modulation AM/FM, fonctions de Bessel, bande de Carson.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery-container">
+        <div class="main-image-container">
+          <img id="featured-image" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.50.22.png" alt="PLL - Image 1">
+        </div>
+        <div class="thumbnail-container">
+          <img class="thumbnail active" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.50.22.png" alt="Image 1">
+          <img class="thumbnail" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.52.40.png" alt="Image 3">
+          <img class="thumbnail" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.53.50.png" alt="Image 4">
+          <img class="thumbnail" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.55.05.png" alt="Image 5">
+          <img class="thumbnail" src="/portfolio/image_ppl/Screenshot 2025-07-04 08.56.14.png" alt="Image 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot Mobile à Roues Commandées - BAMBA AHMED</title>
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-detail">
+    <a href="/portfolio/index.html#projets" class="back-button">
+      <i class="fas fa-arrow-left"></i> Retour aux projets
+    </a>
+    <div class="project-header">
+      <h1>Robot Mobile à Roues Commandées</h1>
+    </div>
+    <div class="project-content">
+      <div class="project-left-column">
+        <div class="project-description">
+          <h3>1. Introduction</h3>
+          <p>Ce projet vise à concevoir un robot motorisé contrôlé via une interface mobile grâce à un microcontrôleur (le ESP32). Le robot est composé de quatre moteurs DC (5V) pour les roues, un hacheur série pour le contrôle, un ESP32 caméra pour filmer les manipulations, et des piles comme source d'énergie.</p>
+          <br>
+          
+          <h3>2. Conception matérielle</h3>
+          <ul style="margin-left: 2em;">
+            <li>Moteurs et contrôle : Utilisation de quatre moteurs DC (5V), contrôlés par un circuit intégré L293D (hacheur quatre quadrants) permettant de gérer le sens et la vitesse de rotation des moteurs.</li>
+            <li>Caméra ESP32 : Intégration d'un deuxième ESP32 avec module caméra pour capturer les déplacements en temps réel.</li>
+            <li>Alimentation : Les moteurs et le système sont alimentés par des piles.</li>
+          </ul>
+          <br>
+          
+          <h3>3. Connexion et commande</h3>
+          <ul style="margin-left: 2em;">
+            <li>Configuration de l'application Blynk pour contrôler le robot via une interface mobile.</li>
+            <li>Création de boutons virtuels sur Blynk pour gérer les directions (avant, arrière, gauche, droite) et les fonctions supplémentaires.</li>
+            <li>Utilisation d'un ESP32 pour connecter le robot au réseau Wi-Fi et recevoir les commandes via l'application.</li>
+          </ul>
+          <br>
+          
+          <h3>4. Améliorations fonctionnelles (personnelles)</h3>
+          <ul style="margin-left: 2em;">
+            <li>Radar de recul : Ajout d'un capteur à ultrason pour mesurer la distance aux obstacles. Le radar active un klaxon en cas de proximité excessive et ajuste la fréquence du son selon la distance.</li>
+            <li>Clignotants : Ajout de LEDs pour signaler les directions lors des virages.</li>
+            <li>Affichage LCD : Inclusion d'un écran pour afficher des messages.</li>
+            <li>Vitesse adaptée : Réduction automatique de la vitesse lors des marches arrière pour optimiser le radar de recul.</li>
+          </ul>
+          <br>
+          
+          <h3>5. Programmation et optimisation</h3>
+          <ul style="margin-left: 2em;">
+            <li>Ajustement des scripts pour améliorer la précision des mouvements lors des rotations.</li>
+            <li>Programmation des fonctions supplémentaires comme le klaxon (buzzer) et l'affichage.</li>
+            <li>Répartition des tâches entre le microcontrôleur ESP32 et un Arduino (pour gérer l'affichage LCD) en raison des limitations de pins.</li>
+          </ul>
+          <br>
+          
+          <h3>6. Conclusion</h3>
+          <p>Ce projet a permis d'intégrer des connaissances en électronique, programmation embarquée et contrôle (IOT).<br>
+          Il met en avant l'importance de l'optimisation matérielle et logicielle pour développer des robots fonctionnels, interactifs et moins coûteux.</p>
+        </div>
+
+        <div class="project-gallery-container">
+          <div class="main-image-container">
+            <img id="featured-image" src="/portfolio/image_mobile_à_roue_commandé/Screenshot 2025-06-15 21.50.23.png" alt="Robot Mobile à Roues Commandées - Image 1">
+          </div>
+          <div class="thumbnail-container">
+            <img class="thumbnail active" src="/portfolio/image_mobile_à_roue_commandé/Screenshot 2025-06-15 21.50.23.png" alt="Image 1">
+            <img class="thumbnail" src="/portfolio/image_mobile_à_roue_commandé/Screenshot 2025-06-15 19.51.35.png" alt="Image 2">
+            <img class="thumbnail" src="/portfolio/image_mobile_à_roue_commandé/Screenshot 2025-06-15 21.53.12.png" alt="Image 3">
+            <img class="thumbnail" src="/portfolio/image_mobile_à_roue_commandé/Screenshot 2025-06-15 21.58.39.png" alt="Image 4">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <h3>Informations</h3>
+        <div class="meta-item">
+          <div class="info-line"><strong>Date :</strong> <span>2025</span></div>
+          <div class="info-line"><strong>Nombre de participants :</strong> 2</div>
+          <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+        </div>
+        <div class="meta-item">
+          <strong>Acquis et outils/technologies :</strong>
+          <p><span style="font-weight: bold; color: black;">Outils logiciels :</span> Arduino IDE, plateforme Blynk.</p>
+          <p><span style="font-weight: bold; color: black;">Matériel :</span> ESP32, ESP32 caméra, moteurs DC (5V), L293D, capteur ultrason, buzzer, écran LCD, piles.</p>
+          <p><span style="font-weight: bold; color: black;">Compétences :</span> Contrôle de moteurs via hacheurs, IOT, optimisation logicielle, configuration réseau, création d'interfaces utilisateur, système embarqué.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html>

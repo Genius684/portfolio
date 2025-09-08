@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage en Automatisme : Modernisation des Ensacheuses de Farine - BAMBA AHMED</title>
+  <meta name="description" content="Stage automatisme: migration Pro-Face vers Siemens S7-1200/KTP900, architecture WAGO, séquençage et alarmes.">
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu" id="main-nav">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-detail">
+    <a href="/portfolio/index.html#projets" class="back-button">
+      <i class="fas fa-arrow-left"></i> Retour aux projets
+    </a>
+
+    <div class="project-header">
+      <h1>Stage en Automatisme : Modernisation des Ensacheuses de Farine</h1>
+    </div>
+
+    <div class="project-content">
+      <div class="project-left-column">
+        <div class="project-description">
+          <h3>1. Introduction</h3>
+          <p>Dans le cadre de ma formation en Génie Électrique et Informatique Industriel, au cours de ma troisième et dernière année, j'ai réalisé un stage de 12 semaines (début avril à fin juillet) au sein d'une grande industrie agroalimentaire (plus de 400 employés) de production de farine nommée "Les Moulins Modernes de Côte d'Ivoire". Le projet vise à moderniser des ensacheuses (avec des automates Pro‑Face) en migrant vers une solution Siemens modulaire (PLC S7‑1200, HMI KTP900 Basic, chaîne WAGO). L'objectif est d'améliorer la fiabilité et la maintenabilité des ensacheuses en facilitant le remplacement des modules en cas de panne.</p>
+          <br>
+          
+          <h3>2. Vue d'ensemble du fonctionnement de l'ensacheuse</h3>
+          <p>L'ensacheuse est une machine utilisée dans l'usine pour remplir automatiquement des sacs avec une quantité précise de produit. Son fonctionnement se déroule en plusieurs étapes séquentielles, toutes surveillées et contrôlées depuis un écran tactile (HMI) par l'opérateur.</p>
+          
+          <h4>2.1 Positionnement et préparation du sac</h4>
+          <p>Le sac vide est d'abord placé manuellement sur un support appelé "présenteur de sacs".<br>
+          Ce support ajuste la position du sac pour qu'il soit bien aligné sous le bec de remplissage. L'opérateur peut aussi régler la hauteur du support via l'écran HMI pour s'adapter à la taille du sac.</p>
+          
+          <h4>2.2 Remplissage du sac</h4>
+          <p>Avant de verser la farine, le système vérifie que le sac est bien en place (grâce à un capteur de présence).<br>
+          Une fois la vérification faite, la farine est automatiquement déversée dans le sac depuis une trémie de pesée.<br>
+          Pendant tout le remplissage, un capteur mesure en temps réel le poids du sac, et le flux s'arrête dès que le poids cible est atteint.<br>
+          Le système surveille également la position verticale du sac et permet à l'opérateur de l'ajuster si nécessaire.</p>
+          
+          <h4>2.3 Évacuation du sac rempli</h4>
+          <p>Une fois le sac plein, un vérin pousse le sac latéralement pour le faire avancer vers la zone suivante.<br>
+          Le démarrage de ce pousseur peut être légèrement retardé (réglage en secondes) pour s'assurer que le sac est bien stable avant d'être déplacé.</p>
+          
+          <h4>2.4 Compactage du sac</h4>
+          <p>Avant d'être évacué, le sac reçoit une pression verticale rapide et brève sur sa partie centrale.<br>
+          Cela permet de bien répartir la farine à l'intérieur, d'aplatir le sac, et de faciliter sa manipulation.<br>
+          Le temps de descente du presseur est aussi configurable depuis l'HMI.</p>
+          
+          <h4>2.5 Vidange manuelle (si nécessaire)</h4>
+          <p>Dans certains cas, l'opérateur peut déclencher manuellement un déchargement en vrac de la trémie, c'est-à-dire vider la farine sans passer par les sacs.<br>
+          Le temps de vidange est également réglable à l'écran.</p>
+          
+          <h4>2.6 Surveillance et alarmes</h4>
+          <p>Le système surveille en permanence plusieurs paramètres critiques :<br>
+          Présence ou absence de sac,<br>
+          Erreurs de pesée,<br>
+          Pannes de capteurs ou de moteurs,<br>
+          Niveaux insuffisants (par exemple, de farine).<br>
+          En cas de problème, une alarme visuelle s'affiche sur l'HMI, que l'opérateur peut consulter et acquitter.</p>
+          
+          <h4>2.7 Interface opérateur (HMI)</h4>
+          <p>L'ensemble de ces actions est géré depuis un écran tactile. Plusieurs pages sont disponibles, parmi lesquelles :<br>
+          La page principale (avec le nombre de sacs remplis et le débit horaire),<br>
+          Les paramètres de configuration (temps, seuils, réglages machines),<br>
+          La page de pesée,<br>
+          La page des formats de sacs,<br>
+          Une page technique (pour la maintenance),<br>
+          Et une page dédiée à la gestion des alarmes.<br>
+          La navigation est intuitive, avec des boutons "Next" et "Back", et chaque page affiche son nom pour s'y retrouver facilement.</p>
+          <br>
+          
+          <h3>3. Architecture matérielle</h3>
+          <table style="width:100%;border-collapse:collapse;text-align:center;border:2px solid #333;">
+            <tr style="background:#f5f5f5;">
+              <th style="border:1px solid #333;">Composant</th><th style="border:1px solid #333;">Référence</th><th style="border:1px solid #333;">Rôle</th>
+            </tr>
+            <tr><td style="border:1px solid #333;">PLC Siemens</td><td style="border:1px solid #333;">S7‑1200</td><td style="border:1px solid #333;">Automate</td></tr>
+            <tr><td style="border:1px solid #333;">HMI Siemens</td><td style="border:1px solid #333;">KTP900 Basic</td><td style="border:1px solid #333;">Interface opérateur</td></tr>
+            <tr><td style="border:1px solid #333;">Coupleur PROFINET IO WAGO</td><td style="border:1px solid #333;">750‑375 V02.04</td><td style="border:1px solid #333;">Réseau de communication PROFINET</td></tr>
+            <tr><td style="border:1px solid #333;">Modules E/S WAGO DI</td><td style="border:1px solid #333;">750‑1415 ×2 (16 entrées)</td><td style="border:1px solid #333;">Lecture capteurs</td></tr>
+            <tr><td style="border:1px solid #333;">Modules E/S WAGO DO</td><td style="border:1px solid #333;">750‑1515 ×2 (16 sorties)</td><td style="border:1px solid #333;">Commande actionneurs</td></tr>
+            <tr><td style="border:1px solid #333;">Module fin de bus WAGO</td><td style="border:1px solid #333;">750‑600</td><td style="border:1px solid #333;">Terminaison</td></tr>
+          </table>
+          <br>
+          
+          <h3>4. Objectifs fonctionnels</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li>Séquençage automatique : découpler pesée et ensachage par signaux binaires, alterner bouches A/B.</li>
+                  <li>Gestion des sous-systèmes : présenteur, vérin serrage, trémie, vibration, pousseur.</li>
+                  <li>Surveillance et alarmes : thermiques, urgences, communication, pannes capteurs/moteurs.</li>
+                  <li>Modularité et documentation : mapping E/S détaillé, GRAFCET clair, conventions de nommage.</li>
+              </ul>
+          </div>
+          <br>
+          
+          <h3>5. Méthodologie de réalisation</h3>
+          <p><b>Configuration matérielle :</b> Import des GSDML WAGO dans TIA Portal, insertion coupleur et modules.<br>
+          <b>Déclaration et cartographie des E/S :</b> Création de tags (%I et %Q) avec noms explicites, tableau de correspondance physique.<br>
+          <b>Modélisation GRAFCET :</b> Définition des étapes S1–S7 et transitions T0–T7 pour chaque séquence d'ensachage.<br>
+          <b>Programmation PLC :</b> OB100 (initialisation), OB1 (boucle principale), FC_EnsAccriceA/B (séquences GRAFCET), utilisation de flags internes (%M) pour autohold. Adaptation du ladder Pro‑Face existant et intégration des diagnostics WAGO (DGSL).<br>
+          <b>Configuration IHM</b><br>
+          <b>Simulation et tests :</b> PLCSIM et simulation HMI : vérification des séquences, temps, robustesse aux alarmes.<br>
+          <b>Mise en service :</b> Câblage sur rail DIN, Go Online dans TIA Portal, détection PROFINET, validation I/O physiques.</p>
+          <br>
+          
+          <h3>6. Conclusion</h3>
+          <p>Ce projet est actuellement en cours de développement et intégration. La prochaine étape consistera à finaliser la migration du code Ladder Pro‑Face vers TIA Portal, puis réaliser les essais sur site et ajustements finaux.</p>
+        </div>
+
+        <div class="project-gallery-container">
+          <div class="main-image-container">
+            <img id="featured-image" src="/portfolio/image_stage1/IMG_20250711_113313_638.jpg" alt="Stage automatisme - Image 1" loading="lazy">
+          </div>
+          <div class="thumbnail-container">
+            <img class="thumbnail active" src="/portfolio/image_stage1/IMG_20250711_113313_638.jpg" alt="Image 1" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113306_353.jpg" alt="Image 2" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113257_992.jpg" alt="Image 3" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113250_361.jpg" alt="Image 4" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113228_140.jpg" alt="Image 5" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113220_419.jpg" alt="Image 6" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113206_508.jpg" alt="Image 7" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113159_610.jpg" alt="Image 8" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/IMG_20250711_113035_566.jpg" alt="Image 9" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/emplacement_2_tag_PLC_7.PNG" alt="Image 10" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_stage1/Capture-main-1.PNG" alt="Image 11" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <h3>Informations</h3>
+        <div class="meta-item">
+          <div class="info-line"><strong>Date :</strong> <span>2025 - En cours</span></div>
+          <div class="info-line"><strong>Nombre de participants :</strong> 1</div>
+          <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+          <div class="info-line"><strong>Entreprise :</strong> MMCI (Les Moulins Modernes de Côte d'Ivoire), Abidjan, Côte d'Ivoire.</div>
+        </div>
+        <div class="meta-item">
+          <strong>Acquis et outils/technologies :</strong>
+          <p><span style="font-weight: bold; color: black;">Logiciels :</span> TIA Portal, Gp-Pro Ex (Pro Face).</p>
+          <p><span style="font-weight: bold; color: black;">Automates et IHM :</span> Siemens S7‑1200, KTP900 Basic, WAGO 750‑375 et modules E/S.</p>
+          <p><span style="font-weight: bold; color: black;">Compétences :</span> migration d'automate, simulation PLC, câblage industriel, documentation technique, schéma électrique puissance/commande, GRAFCET, programmation Ladder, diagnostic PROFINET, gestion d'alarmes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html

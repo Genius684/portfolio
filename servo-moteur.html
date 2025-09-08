@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Régulation Vitesse Servo Moteur - BAMBA AHMED</title>
+  <meta name="description" content="Régulation de vitesse du QUBE-Servo 2: identification, filtrage passe-bas, synthèse PI/PID et validation Simulink.">
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu" id="main-nav">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="project-detail">
+      <a href="/portfolio/index.html#projets" class="back-button">
+        <i class="fas fa-arrow-left"></i> Retour aux projets
+      </a>
+      
+      <div class="project-header">
+        <h1>Régulation de la Vitesse d'un Servo Moteur</h1>
+      </div>
+
+      <div class="project-content">
+        <div class="project-description">
+          <h3>Introduction</h3>
+          <p>Le projet s'est concentré sur la régulation de la vitesse de rotation d'un disque à l'aide du QUBE-Servo 2, un système rotatif équipé d'un moteur à courant continu (18V DC). L'objectif principal était de synthétiser un correcteur optimal (PI ou PID) pour respecter les spécifications suivantes :</p>
+          <ul style="margin-left: 2em;">
+            <li>Minimiser l'erreur statique.</li>
+            <li>Garantir une réponse rapide atteignant rapidement la consigne de vitesse.</li>
+            <li>Limiter les dépassements de vitesse.</li>
+          </ul>
+          <br>
+          <h3>Étapes principales du projet :</h3>
+          <br>
+          <h4>Prise en main de MATLAB-SIMULINK :</h4>
+          <ul style="margin-left: 2em;">
+            <li>Familiarisation avec les blocs fonctionnels (HIL Initialize, HIL Write Analog, HIL Read Encoder Timebase, etc.).</li>
+            <li>Obtention de la réponse indicielle pour analyser le comportement du système.</li>
+          </ul>
+          <h4>Filtrage des signaux :</h4>
+          <ul style="margin-left: 2em;">
+            <li>Application d'un filtre passe-bas pour réduire le bruit haute fréquence généré par la dérivation de l'angle et les capteurs.</li>
+            <li>Optimisation des paramètres du filtre (constante de temps et pulsation de coupure).</li>
+          </ul>
+          <h4>Identification du système :</h4>
+          <ul style="margin-left: 2em;">
+            <li>Utilisation des réponses indicielles et fréquentielles pour modéliser le système comme un système du premier ordre.</li>
+            <li>Réalisation du diagramme de Bode pour confirmer les caractéristiques fréquentielles.</li>
+          </ul>
+          <h4>Synthèse des correcteurs :</h4>
+          <ul style="margin-left: 2em;">
+            <li><strong>Correcteur PI :</strong> Mise en œuvre pour annuler l'erreur statique tout en respectant la marge de phase requise.</li>
+            <li><strong>Correcteur PID :</strong> Conception pour améliorer la précision et la stabilité, particulièrement aux moyennes et hautes fréquences.</li>
+          </ul>
+          <h4>Simulation et tests :</h4>
+          <ul style="margin-left: 2em;">
+            <li>Validation des performances des correcteurs à l'aide de simulations MATLAB-SIMULINK.</li>
+            <li>Analyse des résultats pour ajuster les gains et paramètres des correcteurs.</li>
+          </ul>
+          <br>
+          <h4>Conclusion :</h4>
+          <p>Le projet a permis de mettre en application les principes d'asservissement et de régulation, ainsi que de répondre aux contraintes des systèmes électriques. Bien que certaines étapes aient nécessité des compromis, le projet a renforcé l'importance d'adapter les solutions aux spécifications techniques.</p>
+        </div>
+
+        <div class="project-meta">
+          <h3>Informations</h3>
+          <div class="meta-item">
+            <div class="info-line"><strong>Date :</strong> <span>2024</span></div>
+            <div class="info-line"><strong>Nombre de participants :</strong> 3</div>
+            <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+          </div>
+          <div class="meta-item">
+            <strong>Acquis et outils/technologies :</strong>
+            <p><span style="font-weight: bold; color: black;">Outils logiciels :</span> MATLAB-SIMULINK.</p>
+            <p><span style="font-weight: bold; color: black;">Modélisation :</span> Réponse indicielle, réponse fréquentielle, diagramme de Bode.</p>
+            <p><span style="font-weight: bold; color: black;">Compétences :</span> Analyse des systèmes, optimisation de paramètres, simulation numérique, asservissement (correcteurs PI et PID), filtrage passe-bas.</p>
+          </div>
+        </div>
+        
+        <div class="project-gallery-container">
+          <div class="main-image-container">
+            <img id="featured-image" src="/portfolio/image_servo_moteur/image1.png" alt="Schéma de régulation de vitesse servo moteur" loading="lazy">
+          </div>
+          <div class="thumbnail-container">
+            <img class="thumbnail active" src="/portfolio/image_servo_moteur/image1.png" alt="Image 1" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_servo_moteur/image2.png" alt="Image 2" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_servo_moteur/image3.png" alt="Image 3" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html>

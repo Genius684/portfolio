@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyseur de Gisement Solaire - BAMBA AHMED</title>
+  <meta name="description" content="Projet d'analyseur de gisement solaire : acquisition capteurs, filtrage, IHM LabVIEW et microcontrôleurs pour mesurer irradiation et température.">
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu" id="main-nav">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-detail">
+    <a href="/portfolio/index.html#projets" class="back-button">
+      <i class="fas fa-arrow-left"></i> Retour aux projets
+    </a>
+    <div class="project-header">
+      <h1>Analyseur de Gisement Solaire</h1>
+    </div>
+    <div class="project-content">
+      <div class="project-left-column">
+        <div class="project-description">
+          <h3>1. Introduction</h3>
+          <p>Ce projet vise à concevoir une "valise AGS" (Analyseur de Gisement Solaire) permettant à un technicien de mesurer les conditions optimales (température, irradiation, puissance, inclinaison) pour le positionnement et le dimensionnement d'un panneau solaire.</p>
+          <br>
+          
+          <h3>2. Programmation de l'IHM sous LabVIEW</h3>
+          <p>Découverte de LabVIEW : environnement graphique "G" pour l'acquisition de données et le contrôle d'instruments.<br>
+          Initiations successives : réalisation de calculs, chenillard LED, chronomètre, génération et traitement de signaux, calculatrice… pour maîtriser les blocs fondamentaux.<br>
+          Développement de l'IHM principale :<br>
+          - Face avant avec afficheurs numériques pour chaque capteur.<br>
+          - Diagramme de blocs structuré en boucle "tant que" avec temporisation 500 ms.<br>
+          - Gestion du port série (via Arduino MEGA) pour récupérer les trames envoyées par le microcontrôleur.</p>
+          <br>
+          
+          <h3>3. Partie puissance et dimensionnement</h3>
+          <p>Caractéristiques du panneau solaire : puissance nominale 24 W, Vp=3,04 V, Ip=8 A.<br>
+          Résistance de puissance RH25 : dissipation réelle limitée à 12,5 W (sans dissipateur), on retient 10 W max pour la sécurité.<br>
+          Point de fonctionnement : choix du mode "générateur de courant" à V=1,43 V, I=8,5 A → R≈0,22 Ω.</p>
+          <br>
+          
+          <h3>4. Conception de la carte d'acquisition analogique</h3>
+          <p>Étage d'adaptation : amplificateur non inverseur à LM358 pour relever la sortie panneau et l'amener à Vref=1,65 V (gain ≃1,15).<br>
+          Capteur de température CTN :<br>
+          - Linéarisation via relation paramètre-β (formule simplifiée de Steinhart–Hart).<br>
+          - Mise en place d'un pont diviseur (R4≈1,8 kΩ) et choix d'un condensateur 1 µF pour filtrage.<br>
+          Filtre passe-bas d'ordre 2 :<br>
+          - Premier essai RC unique non conforme → second filtre (R₁=47 kΩ, R₃=56 kΩ, C=330 nF) respectant le gabarit (-40 dB/décade).<br>
+          - Validation en simulation et mesures (–9,8 dB à 10 Hz, –41 dB à 100 Hz).</p>
+          <br>
+          
+          <h3>5. Programmation des microcontrôleurs</h3>
+          <p>PIC18F45K20 :<br>
+          - Configuration du TIMER0 pour temporisation précise (500 ms).<br>
+          - Réglage des registres ADCON0–2 pour la conversion CAN (10 bits, TAD=2 µs, 20 TAD acquisition).<br>
+          - Fonctions dédiées pour mesurer la température, l'inclinaison (potentiomètre) et l'irradiance.<br>
+          Arduino MEGA :<br>
+          - Remplacement du PIC pour l'interface série avec LabVIEW (bibliothèque analogReference(EXTERNAL) pour Vref=1,65 V).<br>
+          - Structuration du code en modules clairs, émission de trames pour chaque capteur.</p>
+          <br>
+          
+          <h3>6. Conclusion</h3>
+          <p>Ce projet a permis de mettre en œuvre l'intégralité d'une chaîne de mesure solaire : de l'acquisition physique (capteurs, filtrage, adaptation) à la visualisation et au pilotage via IHM LabVIEW. Il a renforcé les compétences en électronique de puissance, électronique analogique, programmation embarquée et communication série.</p>
+        </div>
+
+        <div class="project-gallery-container">
+          <div class="main-image-container">
+            <img id="featured-image" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.24.06.png" alt="Analyseur Solaire - Image 1" loading="lazy">
+          </div>
+          <div class="thumbnail-container">
+            <img class="thumbnail active" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.24.06.png" alt="Image 1" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.25.19.png" alt="Image 2" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.28.04.png" alt="Image 3" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.37.48.png" alt="Image 4" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.40.28.png" alt="Image 5" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.45.43.png" alt="Image 6" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.48.54.png" alt="Image 7" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.51.18.png" alt="Image 8" loading="lazy">
+            <img class="thumbnail" src="/portfolio/image_solaire/Screenshot 2025-07-02 19.52.25.png" alt="Image 9" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <h3>Informations</h3>
+        <div class="meta-item">
+          <div class="info-line"><strong>Date :</strong> <span>2021</span></div>
+          <div class="info-line"><strong>Nombre de participants :</strong> 3</div>
+          <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+        </div>
+        <div class="meta-item">
+          <strong>Acquis et outils/technologie :</strong>
+          <p><span style="font-weight: bold; color: black;">Logiciels & langages :</span> LabVIEW (G), Arduino IDE, C pour PIC.</p>
+          <p><span style="font-weight: bold; color: black;">Matériel :</span> PIC18F45K20, Arduino MEGA, LM358, L293D, RTD/CTN, MOSFET, AOP, capteur ultrasonique, écran LCD.</p>
+          <p><span style="font-weight: bold; color: black;">Compétences :</span> Conception IHM, filtres actifs/passifs, pont diviseur, temporisation par timer, CAN 10 bits, relation Steinhart–Hart, analyse de gisement solaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html>

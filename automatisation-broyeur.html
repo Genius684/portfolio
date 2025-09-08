@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage en Automatisme : Automatisation du Système de Lubrification du Moteur Asynchrone d'un Broyeur à Boulet - BAMBA AHMED</title>
+  <link rel="stylesheet" href="/portfolio/css/style.min.css">
+  <link rel="stylesheet" href="/portfolio/css/animations.min.css">
+  <link rel="stylesheet" href="/portfolio/css/fontawesome.min.css">
+</head>
+<body>
+    <nav>    <button class="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="/portfolio/index.html">Accueil</a></li>
+      <li><a href="/portfolio/index.html">Compétences</a></li>
+      <li><a href="/portfolio/index.html#projets" class="active">Projets</a></li>
+      <li><a href="/portfolio/index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-detail">
+    <a href="/portfolio/index.html#projets" class="back-button">
+      <i class="fas fa-arrow-left"></i> Retour aux projets
+    </a>
+    <div class="project-header">
+      <h1>Stage en Automatisme : Automatisation du Système de Lubrification du Moteur Asynchrone d'un Broyeur à Boulet</h1>
+    </div>
+    <div class="project-content">
+      <div class="project-left-column">
+        <div class="project-description">
+          <h3>1. Introduction</h3>
+          <p>Dans le cadre de ma formation en <strong>Génie Électrique et Informatique Industrielle</strong>, au cours de ma deuxième année, j'ai réalisé un <strong>stage de 12 semaines</strong> (avril à juin) au sein de <strong>CIMTOGO</strong>, filiale du groupe <strong>Heidelberg Materials</strong>, l'un des leaders mondiaux dans la <strong>production de ciment</strong>. L'usine de Lomé où j'ai été affecté est une <strong>grande industrie</strong> (2 millions de tonnes de ciment par an) équipée de plusieurs <strong>broyeurs</strong> et <strong>lignes d'ensachage</strong> destinées à produire et distribuer du ciment pour le marché local et régional.<br>
+          J'ai intégré le service <strong>automatisme et maintenance industrielle</strong>, responsable de la maintenance et de l'assurance du bon fonctionnement des <strong>équipements électromécaniques</strong> essentiels au processus de production.</p>
+          <br>
+          <h3>2. Objectifs du projet</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li><strong>Automatiser</strong> le <strong>circuit de lubrification</strong> du nouveau <strong>moteur asynchrone</strong> de ce broyeur.</li>
+                  <li>Superviser le <strong>remplacement du moteur principal</strong>, en assurant un <strong>démarrage fiable et sécurisé</strong> via un <strong>démarreur à résistance liquide (LRS)</strong>.</li>
+              </ul>
+          </div>
+          <br>
+          <h3>3. Analyse et préparation</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li><strong>Étude du système existant</strong> : analyse du fonctionnement du <strong>broyeur</strong> et de ses <strong>sous-systèmes</strong>, notamment le <strong>réservoir d'huile</strong>, les <strong>pompes</strong>, les <strong>capteurs</strong>, et les <strong>sécurités</strong>.</li>
+                  <li><strong>Rédaction du cahier des charges</strong> : définition des étapes du <strong>processus de lubrification</strong>, <strong>conditions de sécurité</strong>, capteurs impliqués et <strong>interlocks</strong> à intégrer.</li>
+                  <li><strong>Modélisation du GRAFCET</strong> : description de la <strong>séquence logique de fonctionnement</strong> (pompage, détection, autorisation, arrêt) sous forme de <strong>GRAFCET</strong> pour préparer la programmation.</li>
+              </ul>
+          </div>
+          <br>
+          <h3>3. Réalisation technique</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li><strong>Câblage industriel</strong> : tirage et connexion de <strong>câbles de puissance (380 V)</strong> et de <strong>commande (24 V)</strong> depuis le tableau jusqu'aux <strong>actionneurs</strong> et <strong>capteurs</strong>.</li>
+                  <li><strong>Installation du démarreur à résistance liquide (LRS)</strong> : remplissage du <strong>fût conducteur</strong>, raccordement du <strong>circuit de refroidissement</strong>, vérification de l'<strong>isolement</strong> et de la <strong>mise à la terre</strong>.</li>
+                  <li><strong>Montage du moteur</strong> : installation du nouveau <strong>moteur asynchrone</strong>, <strong>alignement</strong>, montage des <strong>accouplements</strong> et <strong>raccordement électrique</strong>.</li>
+                  <li><strong>Flushing du circuit d'huile</strong> : suivi de la procédure de <strong>circulation d'huile propre</strong> pour évacuer les <strong>particules résiduelles</strong>.</li>
+              </ul>
+          </div>
+          <br>
+          <h3>4. Programmation et supervision</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li><strong>Automate Siemens S7‑400</strong> : programmation des <strong>interlocks</strong> (double pompe, capteurs de pression, conditions de démarrage) dans <strong>STEP 7</strong>, utilisation de l'<strong>OB100</strong> pour l'initialisation du système au premier scan, et de l'<strong>OB1</strong> pour la séquence principale.</li>
+                  <li><strong>Supervision avec WinCC</strong> : développement de <strong>pages HMI</strong> pour la <strong>salle de commande</strong> permettant de visualiser l'état des pompes, les pressions, et lancer les <strong>cycles de test</strong> ou manuel.</li>
+              </ul>
+          </div>
+          <br>
+          <h3>5. Validation et essais</h3>
+          <div style="margin-left: 20px;">
+              <ul>
+                  <li><strong>Tests de fonctionnement</strong> : vérification de la cohérence des <strong>séquences automatisées</strong> avec les <strong>interlocks réels</strong>, fonctionnement des <strong>capteurs</strong> et <strong>seuils d'alarme</strong>.</li>
+                  <li><strong>Observation du fonctionnement en salle de commande</strong> : assistance aux <strong>opérateurs</strong> et <strong>techniciens</strong> dans les <strong>procédures de mise en route</strong>, <strong>consignes de sécurité</strong>, et <strong>réinitialisation des défauts</strong>.</li>
+                  <li><strong>Essais finaux</strong> : après <strong>validation électrique et mécanique</strong>, participation à la <strong>mise sous tension</strong>, aux <strong>tests à vide</strong> puis au <strong>démarrage progressif du broyeur</strong>.</li>
+              </ul>
+          </div>
+          <br>
+          <h3>6. Conclusion</h3>
+          <p>Ce stage m'a permis d'aborder de manière concrète toutes les phases d'un <strong>projet industriel automatisé</strong> : de l'<strong>analyse fonctionnelle</strong> à la <strong>mise en service</strong>.<br>
+          J'ai renforcé mes <strong>compétences techniques</strong>, mais aussi développé un regard global sur les <strong>exigences QHSE</strong>, la <strong>communication entre les différents pôles techniques</strong>, et le <strong>travail en équipe</strong> dans une <strong>industrie à grande échelle</strong>.</p>
+        </div>
+
+        <div class="project-gallery-container">
+          <div class="main-image-container">
+            <img id="featured-image" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.48.27.png" alt="Broyeur - Image 1">
+          </div>
+          <div class="thumbnail-container">
+            <img class="thumbnail active" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.48.27.png" alt="Image 1">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.47.04.png" alt="Image 2">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.45.57.png" alt="Image 3">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.45.17.png" alt="Image 4">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.44.00.png" alt="Image 5">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.40.50.png" alt="Image 6">
+            <img class="thumbnail" src="/portfolio/image_stage2/Screenshot 2025-07-15 07.39.34.png" alt="Image 7">
+            <img class="thumbnail" src="/portfolio/image_stage2/3294723_uploaded_image1_1629742469.jpg" alt="Image 8">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <h3>Informations</h3>
+        <div class="meta-item">
+          <div class="info-line"><strong>Date :</strong> <span>2024</span></div>
+          <div class="info-line"><strong>Nombre de participants :</strong> 3</div>
+          <div class="info-line"><strong style="color:var(--secondary-color);">Formation :</strong> <span>BUT en Génie Électrique et Informatique Industrielle, IUT de Villetaneuse/Sorbonne Paris Nord.</span></div>
+          <div class="info-line"><strong>Entreprise :</strong> CIMTOGO, HeidelbergCement, Lomé, Togo</div>
+        </div>
+        <div class="meta-item">
+          <strong>Acquis et outils/technologies :</strong>
+          <p><span style="font-weight: bold; color: black;">Automate et IHM :</span> Siemens S7‑400, TIA Portal/STEP 7, WinCC.</p>
+          <p><span style="font-weight: bold; color: black;">Équipements terrain :</span> démarreur LRS, capteurs analogiques et numériques, pompes de lubrification etc.</p>
+        </div>
+        <div class="meta-item">
+          <p><span style="font-weight: bold; color: black;">Compétences :</span> Câblage industriel, automatisme, supervision, sécurité, lecture et mise à jour de schémas électriques, gestion de projet technique en environnement réel, GRAFCET, analyse fonctionnelle, procédures de consignation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/portfolio/js/main.min.js"></script>
+</body>
+</html> 
